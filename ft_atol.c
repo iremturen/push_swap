@@ -1,22 +1,25 @@
-long ft_atol(const char *str)
+
+long	ft_atol(const char *str)
 {
-    long result = 0;
-    int sign = 1;
+	int		i;
+	long	result;
+	int		sign;
 
-    if (*str == '-' || *str == '+')
-    {
-        if (*str == '-')
-            sign = -1;
-        str++;
-    }
-
-    while (*str)
-    {
-        if (*str < '0' || *str > '9') // rakam değilse dur
-            break;
-        result = result * 10 + (*str - '0');
-        str++;
-    }
-
-    return sign * result;
+	i = 0;
+	result = 0;
+	sign = 1;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
