@@ -15,5 +15,7 @@ char	*write_message(char *rule);
 int		ft_strlen(char *str);
 int		error_check(char **argv, int argc);
 void	free_stack(t_stack **stack);
+void	add_stack(t_stack **a, int argc, char **argv);
+t_stack	*create_node(int value);
 
 #endif
