@@ -21,5 +21,17 @@ t_stack	*create_node(int value);
 int		is_sorted(t_stack *a);
 int		ft_stack_size(t_stack *stack);
 long	ft_atol(const char *str);
+int		get_max_bit(t_stack *stack);
+void	indexing(t_stack **a);
+void	push_stack(t_stack **stack_from, t_stack **stack_to, char *msg);
+void	pa( t_stack **a, t_stack **b);
+void	pb( t_stack **a, t_stack **b);
+void	reverse_rotate_stack(t_stack **s, char *msg);
+void	reverse_rotate_ab(t_stack **a, t_stack **b);
+void	rotate_stack(t_stack **s, char *msg);
+void	rotate_ab(t_stack **a, t_stack **b);
+void	swap_stack(t_stack **s, char *msg);
+void	swap_ab(t_stack **a, t_stack **b);
+
 
 #endif

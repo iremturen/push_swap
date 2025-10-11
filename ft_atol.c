@@ -1,3 +1,4 @@
+
 long	ft_atol(const char *str)
 {
 	int		i;
