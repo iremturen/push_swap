@@ -53,3 +53,36 @@ t_stack	*create_node(int value)
 	return (node);
 
 }
+
+int	is_sorted(t_stack *a)
+{
+	while (a && a->next)
+	{
+		if (a->value > a->next->value)
+		{
+			return (0);
+		}
+		a = a->next;
+	}
+	return (1);
+}
+
+int	get_max_bit(t_stack *stack)
+{
+	t_stack	*temp;
+	int		max;
+	int		bits;
+
+	bits = 0;
+	max = 0;
+	temp = stack;
+	while (temp)
+	{
+		if (temp->index > max)
+			max = temp->index;
+		temp = temp->next;
+	}
+	while (max >> bits != 0)
+		bits++;
+	return (bits);
+}
