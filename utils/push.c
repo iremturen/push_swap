@@ -15,10 +15,10 @@ void	push_stack(t_stack **stack_from, t_stack **stack_to, char *msg)
 
 void	pa( t_stack **a, t_stack **b)
 {
-	push_stack(b, a, "pa");
+	push_stack(b, a, "pa\n");
 }
 
 void	pb( t_stack **a, t_stack **b)
 {
-	push_stack(a, b, "pb");
+	push_stack(a, b, "pb\n");
 }

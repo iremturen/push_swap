@@ -19,5 +19,5 @@ void	swap_ab(t_stack **a, t_stack **b)
 {
 	swap_stack(a, NULL);
 	swap_stack(b, NULL);
-	write_message("ss");
+	write_message("ss\n");
 }

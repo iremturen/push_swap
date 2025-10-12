@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-
 void	indexing(t_stack **a)
 {
 	t_stack	*temp;
@@ -58,7 +57,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 			if ((((*a)->index >> i) & 1) == 0)
 				pb(a, b);
 			else
-				rotate_stack(a, "ra");	
+				rotate_stack(a, "ra\n");	
 			j++;
 		}
 		while (*b)

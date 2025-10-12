@@ -16,7 +16,7 @@ void	reverse_rotate_stack(t_stack **s, char *msg)
 		last = last->next;
 	}
 	if (prev)
-		prev->value = NULL;
+		prev->next = NULL;
 	temp = last;
 	temp->next = *s;
 	*s = temp;
@@ -27,5 +27,5 @@ void	reverse_rotate_ab(t_stack **a, t_stack **b)
 {
 	reverse_rotate_stack(a, NULL);
 	reverse_rotate_stack(b, NULL);
-	write_message("rr");
+	write_message("rr\n");
 }

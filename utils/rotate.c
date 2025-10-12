@@ -21,5 +21,5 @@ void	rotate_ab(t_stack **a, t_stack **b)
 {
 	rotate_stack(a, NULL);
 	rotate_stack(b, NULL);
-	write_message("rr");
+	write_message("rr\n");
 }

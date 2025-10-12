@@ -32,10 +32,8 @@ void	add_stack(t_stack **a, int argc, char **argv)
 		{
 			last = *a;
 			while (last->next)
-			{
 				last = last->next;
-				last->next = new;
-			}
+			last->next = new;
 		}
 		i++;
 	}
@@ -69,12 +67,14 @@ int	is_sorted(t_stack *a)
 
 int	get_max_bit(t_stack *stack)
 {
-	t_stack	*temp;
-	int		max;
-	int		bits;
+	t_stack		*temp;
+	long		max;
+	int			bits;
 
 	bits = 0;
 	max = 0;
+	if (!stack)
+		return (0);
 	temp = stack;
 	while (temp)
 	{

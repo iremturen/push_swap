@@ -12,7 +12,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*write_message(char *rule)
+void	*write_message(char *rule)
 {
 	write(1, rule, ft_strlen(rule));
 }

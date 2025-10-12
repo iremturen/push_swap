@@ -12,7 +12,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_stack;
 
-char	*write_message(char *rule);
+void	*write_message(char *rule);
 int		ft_strlen(char *str);
 int		error_check(char **argv, int argc);
 void	free_stack(t_stack **stack);
