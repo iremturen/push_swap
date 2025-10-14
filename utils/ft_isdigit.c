@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:52 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:36:53 by ituren           ###   ########.fr       */
+/*   Created: 2025/10/14 15:30:55 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/14 15:33:36 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
-long	ft_atol(const char *str)
+int	ft_isdigit(int c)
 {
-	int		i;
-	long	result;
-	int		sign;
-
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (c >= 48 && c <= 57)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		return (1);
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:56 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:36:57 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/14 17:20:52 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ int	ft_stack_size(t_stack *stack)
 		stack = stack->next;
 	}
 	return (len);
-
 }

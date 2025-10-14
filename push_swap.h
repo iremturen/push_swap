@@ -6,16 +6,16 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:01 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:37:02 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/14 17:29:25 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h> 
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -24,9 +24,10 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_stack;
 
-void	*write_message(char *rule);
+int		ft_isdigit(int c);
+void	write_message(char *rule);
 int		ft_strlen(char *str);
-int		error_check(char **argv, int argc);
+int		error_check(int argc, char **argv);
 void	free_stack(t_stack **stack);
 void	add_stack(t_stack **a, int argc, char **argv);
 t_stack	*create_node(int value);
@@ -44,6 +45,6 @@ void	rotate_stack(t_stack **s, char *msg);
 void	rotate_ab(t_stack **a, t_stack **b);
 void	swap_stack(t_stack **s, char *msg);
 void	swap_ab(t_stack **a, t_stack **b);
-
+int		ft_atoi(const char *str);
 
 #endif

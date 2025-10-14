@@ -2,9 +2,20 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I.
 
-SRC = 
+SRC = utils/error_check.c \
+utils/ft_stack_size.c \
+utils/reverse_rotate.c \
+utils/rules_msg.c \
+utils/ft_atol.c \
+utils/push.c \
+utils/rotate.c \
+utils/swap.c \
+utils/ft_atoi.c \
+utils/ft_isdigit.c \
+push_swap.c \
+stack_utils.c
 
 OBJ = $(SRC:.c=.o)
 

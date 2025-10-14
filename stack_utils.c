@@ -6,7 +6,7 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:04 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:37:05 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/14 17:21:33 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ t_stack	*create_node(int value)
 	node->value = value;
 	node->next = NULL;
 	return (node);
-
 }
 
 int	is_sorted(t_stack *a)

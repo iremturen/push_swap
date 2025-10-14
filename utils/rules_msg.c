@@ -6,7 +6,7 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:39 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:36:40 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/14 15:47:01 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	*write_message(char *rule)
+void	write_message(char *rule)
 {
 	write(1, rule, ft_strlen(rule));
 }

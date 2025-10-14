@@ -6,10 +6,11 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:47 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:36:48 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/14 15:44:04 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
 int	is_duplicate(char **argv, int argc)
 {
