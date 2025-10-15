@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:01 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 17:29:25 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/15 22:10:01 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	rotate_ab(t_stack **a, t_stack **b);
 void	swap_stack(t_stack **s, char *msg);
 void	swap_ab(t_stack **a, t_stack **b);
 int		ft_atoi(const char *str);
+void	small_stack_sort(t_stack **a, t_stack **b, int size);
 
 #endif

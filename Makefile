@@ -15,7 +15,8 @@ utils/swap.c \
 utils/ft_atoi.c \
 utils/ft_isdigit.c \
 push_swap.c \
-stack_utils.c
+stack_utils.c \
+small_stack_sort.c
 
 OBJ = $(SRC:.c=.o)
 

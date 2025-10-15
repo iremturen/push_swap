@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:59 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 17:35:23 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/15 23:16:17 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		size;
 
 	a = NULL;
 	b = NULL;
@@ -100,8 +101,12 @@ int	main(int argc, char **argv)
 		free_stack(&a);
 		return (0);
 	}
+	size = ft_stack_size(a);
 	indexing(&a);
-	radix_sort(&a, &b);
+	if (size <= 5)
+		small_stack_sort(&a, &b, size);
+	else
+		radix_sort(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
