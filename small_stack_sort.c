@@ -36,25 +36,30 @@ int	get_min(t_stack *a)
 	return (min);
 }
 
-void	sort_three(t_stack **a, t_stack **b)
+void	sort_three(t_stack **a)
 {
+	int	min;
 	int	max;
 
 	max = get_max(*a);
+	min = get_min(*a);
 	if ((*a)->index == max)
-		pb(a, b);
-	else if ((*a)->next->index == max)
-	{
 		rotate_stack(a, "ra\n");
-		pb(a, b);
-	}
-	else
-	{
+	else if ((*a)->next->index == max)
 		reverse_rotate_stack(a, "rra\n");
-		pb(a, b);
-	}
-	if (ft_stack_size(*a) > 1 && !is_sorted(*a))
+	if ((*a)->index != min)
 		swap_stack(a, "sa\n");
+}
+
+void	sort_four(t_stack **a, t_stack **b)
+{
+	int	min;
+
+	min = get_min(*a);
+	while ((*a)->index != min)
+		rotate_stack(a, "ra\n");
+	pb(a, b);
+	sort_three(a);
 	pa(a, b);
 }
 
@@ -71,7 +76,7 @@ void	sort_five(t_stack **a, t_stack **b)
 	while ((*a)->index != min2)
 		rotate_stack(a, "ra\n");
 	pb(a, b);
-	sort_three(a, b);
+	sort_three(a);
 	pa(a, b);
 	pa(a, b);
 }
@@ -81,7 +86,9 @@ void	small_stack_sort(t_stack **a, t_stack **b, int size)
 	if (size == 2)
 		swap_stack(a, "sa\n");
 	else if (size == 3)
-		sort_three(a, b);
+		sort_three(a);
 	else if (size == 5)
 		sort_five(a, b);
+	else if (size == 4)
+		sort_four(a, b);
 }

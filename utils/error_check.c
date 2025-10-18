@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:47 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 15:44:04 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:38:16 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ int	error_check(int argc, char **argv)
 {
 	int	i;
 
-	if (argc < 2 || !is_number(argv, argc) || is_duplicate(argv, argc))
+	if (argc < 2)
+		return (1);
+	if (!is_number(argv, argc) || is_duplicate(argv, argc))
 	{
 		write(2, "Error\n", 6);
 		return (1);
