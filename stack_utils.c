@@ -6,7 +6,7 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:04 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 12:29:27 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:01:36 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,34 +24,8 @@ void	free_stack(t_stack **stack)
 	}
 }
 
-void	add_stack(t_stack **a, int argc, char **argv)
-{
-	int		i;
-	int		num;
-	t_stack	*new;
-	t_stack	*last;
 
-	i = 1;
-	while (i < argc)
-	{
-		num = ft_atoi(argv[i]);
-		new = create_node(num);
-		if (!new)
-			return ;
-		if (!*a)
-			*a = new;
-		else
-		{
-			last = *a;
-			while (last->next)
-				last = last->next;
-			last->next = new;
-		}
-		i++;
-	}
-}
-
-t_stack	*create_node(int value)
+static t_stack	*create_node(int value)
 {
 	t_stack	*node;
 
@@ -62,6 +36,26 @@ t_stack	*create_node(int value)
 	node->next = NULL;
 	return (node);
 }
+
+void	add_stack(t_stack **a, int num)
+{
+	t_stack	*new;
+	t_stack	*last;
+
+	new = create_node(num);
+	if (!new)
+		return ;
+	if (!*a)
+		*a = new;
+	else
+	{
+		last = *a;
+		while (last->next)
+			last = last->next;
+		last->next = new;
+	}
+}
+
 
 int	is_sorted(t_stack *a)
 {

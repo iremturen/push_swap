@@ -6,7 +6,7 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:59 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 15:11:30 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:10:32 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,12 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 	int		size;
 
+	if (argc < 2)
+		return (1);
 	a = NULL;
 	b = NULL;
-	if (error_check(argc, argv))
+	if (error_check(&a, argc, argv))
 		return (1);
-	add_stack(&a, argc, argv);
 	if (is_sorted(a))
 	{
 		free_stack(&a);
@@ -109,8 +110,6 @@ int	main(int argc, char **argv)
 	if (size <= 5)
 		small_stack_sort(&a, &b, size);
 	else
-		radix_sort(&a, &b);
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
+		radix_sort(&a, &b); 
+	return (free_stack(&a), free_stack(&b), 0);
 }

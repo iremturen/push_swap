@@ -10,6 +10,7 @@ utils/ft_split.c \
 utils/ft_substr.c \
 utils/ft_strdup.c \
 utils/ft_strlen.c \
+utils/ft_strtrim.c \
 push_swap_utils/error_check.c \
 push_swap_utils/push.c \
 push_swap_utils/reverse_rotate.c \

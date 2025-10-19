@@ -6,84 +6,85 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:47 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 12:26:38 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:20:55 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_duplicate(char **argv, int argc)
+static int	is_duplicate(t_stack **a, int num)
 {
-	int	i;
-	int	j;
+	t_stack	*head;
 
-	i = 1;
-	while (i < argc)
+	head = *a;
+	while (head != NULL)
 	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return (1);
-			j++;
-		}
-		i++;
+		if (head->value == num)
+			return (1);
+		head = head->next;
 	}
 	return (0);
 }
 
-int	is_number(char **argv, int argc)
+static int	is_number(char *num)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	if (num[i] == '-' || num[i] == '+')
+		i++;
+	if (!num[i])
+		return (0);
+	while (num[i])
 	{
-		j = 0;
-		if (argv[i][j] == '-' || argv[i][j] == '+')
-			j++;
-		if (!argv[i][j])
+		if (!ft_isdigit(num[i]))
 			return (0);
-		while (argv[i][j])
-		{
-			if (!ft_isdigit(argv[i][j]))
-				return (0);
-			j++;
-		}
 		i++;
 	}
 	return (1);
 }
 
-int	is_int_range(char *str)
+static int	is_int_range(char *str)
 {
 	long	num;
+	int		len;
+	int		max;
 
-	num = ft_atol(str);
-	return (num >= -2147483648 && num <= 2147483647);
-}
-
-int	error_check(int argc, char **argv)
-{
-	int	i;
-
-	if (argc < 2)
-		return (1);
-	if (!is_number(argv, argc) || is_duplicate(argv, argc))
+	max = 11;
+	if (str[0] == '+' || str[0] == '-')
+		max = 10;
+	len = ft_strlen(str);
+	if (len > max)
 	{
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	i = 1;
-	while (i < argc)
+	num = ft_atol(str);
+	return (num >= -2147483648 && num <= 2147483647);
+}
+
+int	error_check(t_stack **a, int argc, char **argv)
+{
+	int		i;
+	int		j;
+	char	**split;
+
+	i = 0;
+	while (++i < argc)
 	{
-		if (!is_int_range(argv[i]))
-		{
-			write(2, "Error\n", 6);
+		split = ft_split(argv[i], ' ');
+		if (!split)
 			return (1);
+		j = -1;
+		while (split[++j])
+		{
+			if (!is_number(split[j]) || !is_int_range(split[j]) || is_duplicate(a, ft_atoi(split[j])))
+			{
+				write(2, "Error\n", 6);
+				return (1);
+			}
+			add_stack(a, ft_atoi(split[j]));
 		}
-		i++;
 	}
 	return (0);
 }

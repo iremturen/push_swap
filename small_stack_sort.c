@@ -6,13 +6,13 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 12:28:08 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 13:14:30 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:11:23 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_max(t_stack *a)
+static int	get_max(t_stack *a)
 {
 	int		max;
 	t_stack	*temp;
@@ -30,7 +30,7 @@ int	get_max(t_stack *a)
 	return (max);
 }
 
-int	get_min(t_stack *a)
+static int	get_min(t_stack *a)
 {
 	int		min;
 	t_stack	*temp;
@@ -48,7 +48,7 @@ int	get_min(t_stack *a)
 	return (min);
 }
 
-void	sort_three(t_stack **a)
+static void	sort_three(t_stack **a)
 {
 	int	min;
 	int	max;
@@ -63,7 +63,7 @@ void	sort_three(t_stack **a)
 		swap_stack(a, "sa\n");
 }
 
-void	sort_five(t_stack **a, t_stack **b)
+static	void sort_five(t_stack **a, t_stack **b)
 {
 	int	min1;
 	int	min2;

@@ -6,7 +6,7 @@
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:01 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 13:30:01 by ituren           ###   ########.fr       */
+/*   Updated: 2025/10/19 19:10:52 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_stack;
 
-int		error_check(int argc, char **argv);
+int		error_check(t_stack **a, int argc, char **argv);
 void	push_stack(t_stack **stack_from, t_stack **stack_to, char *msg);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
@@ -45,14 +45,12 @@ char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	small_stack_sort(t_stack **a, t_stack **b, int size);
 void	free_stack(t_stack **stack);
-void	add_stack(t_stack **a, int argc, char **argv);
-t_stack	*create_node(int value);
+void	add_stack(t_stack **a, int num);
 int		is_sorted(t_stack *a);
 int		get_max_bit(t_stack *stack);
 void	radix_sort(t_stack **a, t_stack **b);
 void	indexing(t_stack **a);
 t_stack	*find_min(t_stack *a);
 void	default_index(t_stack **stack);
-
-
+char	*ft_strtrim(char const *s1, char const *set);
 #endif
