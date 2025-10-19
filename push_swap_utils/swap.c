@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:52 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 12:26:44 by ituren           ###   ########.fr       */
+/*   Created: 2025/10/14 14:36:44 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 12:36:08 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(const char *str)
+void	swap_stack(t_stack **s, char *msg)
 {
-	int		i;
-	long	result;
-	int		sign;
+	t_stack	*first;
+	t_stack	*second;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	if (!s || !(*s) || !((*s)->next))
+		return ;
+	first = *s;
+	second = (*s)->next;
+	first->next = second->next;
+	second->next = first;
+	*s = second;
+	write_message(msg);
+}
+
+void	swap_ab(t_stack **a, t_stack **b)
+{
+	swap_stack(a, NULL);
+	swap_stack(b, NULL);
+	write_message("ss\n");
 }

@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules_msg.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:39 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 15:47:01 by ituren           ###   ########.fr       */
+/*   Created: 2025/06/27 14:03:22 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 12:27:41 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strlen(char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*str;
+	size_t	i;
+	size_t	j;
+	size_t	s_len;
 
-	i = 0;
-	while (str[i])
+	s_len = ft_strlen(s);
+	if (start > s_len)
+		return (ft_strdup(""));
+	if (len >= s_len - start)
+		len = s_len - start;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = start;
+	j = 0;
+	while (s[i] != '\0' && j < len)
 	{
+		str[j] = s[i];
 		i++;
+		j++;
 	}
-	return (i);
-}
-
-void	write_message(char *rule)
-{
-	write(1, rule, ft_strlen(rule));
+	str[j] = '\0';
+	return (str);
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_size.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:56 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 17:20:52 by ituren           ###   ########.fr       */
+/*   Created: 2025/06/27 14:02:10 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 13:25:04 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_stack_size(t_stack *stack)
+char	*ft_strdup(const char *s)
 {
-	int	len;
+	char	*ptr;
+	size_t	i;
 
-	len = 0;
-	while (stack)
+	i = 0;
+	ptr = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!ptr)
+		return (NULL);
+	while (s[i])
 	{
-		len++;
-		stack = stack->next;
+		ptr[i] = s[i];
+		i++;
 	}
-	return (len);
+	ptr[i] = '\0';
+	return (ptr);
 }

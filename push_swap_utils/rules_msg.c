@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rules_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:42 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 14:36:43 by ituren           ###   ########.fr       */
+/*   Created: 2025/10/14 14:36:39 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 13:27:05 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_stack(t_stack **s, char *msg)
+void	write_message(char *rule)
 {
-	t_stack	*temp;
-	t_stack	*last;
-
-	if (!s || !(*s) || !((*s)->next))
-		return ;
-	temp = *s;
-	*s = (*s)->next;
-	temp->next = NULL;
-	last = *s;
-	while (last->next)
-		last = last->next;
-	last->next = temp;
-	write_message(msg);
-}
-
-void	rotate_ab(t_stack **a, t_stack **b)
-{
-	rotate_stack(a, NULL);
-	rotate_stack(b, NULL);
-	write_message("rr\n");
+	write(1, rule, ft_strlen(rule));
 }

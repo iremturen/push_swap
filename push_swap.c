@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:59 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/15 23:16:17 by iremturen        ###   ########.fr       */
+/*   Updated: 2025/10/19 15:11:30 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,14 @@ void	indexing(t_stack **a)
 	t_stack	*min_node;
 	int		index;
 
-	min_node = NULL;
 	index = 0;
 	default_index(a);
-	while ((min_node = find_min(*a)))
+	min_node = find_min(*a);
+	while (min_node != NULL)
+	{
 		min_node->index = index++;
+		min_node = find_min(*a);
+	}
 }
 
 void	radix_sort(t_stack **a, t_stack **b)
@@ -64,7 +67,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 	int	size;
 	int	max_bits;
 
-	size = ft_stack_size(*a);
+	size = stack_size(*a);
 	max_bits = get_max_bit(*a);
 	i = 0;
 	j = 0;
@@ -101,7 +104,7 @@ int	main(int argc, char **argv)
 		free_stack(&a);
 		return (0);
 	}
-	size = ft_stack_size(a);
+	size = stack_size(a);
 	indexing(&a);
 	if (size <= 5)
 		small_stack_sort(&a, &b, size);

@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   stack_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:52 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 12:26:44 by ituren           ###   ########.fr       */
+/*   Created: 2025/10/14 14:36:56 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 12:46:58 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(const char *str)
+int	stack_size(t_stack *stack)
 {
-	int		i;
-	long	result;
-	int		sign;
+	int	len;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	len = 0;
+	while (stack)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		len++;
+		stack = stack->next;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	return (len);
 }

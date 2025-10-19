@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:33 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/14 17:21:03 by ituren           ###   ########.fr       */
+/*   Created: 2025/10/14 14:36:36 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 12:36:13 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_stack(t_stack **stack_from, t_stack **stack_to, char *msg)
+void	reverse_rotate_stack(t_stack **s, char *msg)
 {
 	t_stack	*temp;
+	t_stack	*last;
+	t_stack	*prev;
 
-	if (!stack_from || !(*stack_from))
+	if (!s || !(*s) || !((*s)->next))
 		return ;
-	temp = *stack_from;
-	*stack_from = (*stack_from)->next;
-	temp->next = *stack_to;
-	*stack_to = temp;
+	prev = NULL;
+	last = *s;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next;
+	}
+	if (prev)
+		prev->next = NULL;
+	temp = last;
+	temp->next = *s;
+	*s = temp;
 	write_message(msg);
 }
 
-void	pa( t_stack **a, t_stack **b)
+void	reverse_rotate_ab(t_stack **a, t_stack **b)
 {
-	push_stack(b, a, "pa\n");
-}
-
-void	pb( t_stack **a, t_stack **b)
-{
-	push_stack(a, b, "pb\n");
+	reverse_rotate_stack(a, NULL);
+	reverse_rotate_stack(b, NULL);
+	write_message("rr\n");
 }

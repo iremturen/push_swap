@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:52 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 12:26:44 by ituren           ###   ########.fr       */
+/*   Created: 2025/10/14 14:36:33 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 13:22:57 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(const char *str)
+void	push_stack(t_stack **stack_from, t_stack **stack_to, char *msg)
 {
-	int		i;
-	long	result;
-	int		sign;
+	t_stack	*temp;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	if (!stack_from || !(*stack_from))
+		return ;
+	temp = *stack_from;
+	*stack_from = (*stack_from)->next;
+	temp->next = *stack_to;
+	*stack_to = temp;
+	write_message(msg);
+}
+
+void	pa(t_stack **a, t_stack **b)
+{
+	push_stack(b, a, "pa\n");
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	push_stack(a, b, "pb\n");
 }

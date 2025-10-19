@@ -1,19 +1,22 @@
-
 NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I.
 
-SRC = utils/error_check.c \
-utils/ft_stack_size.c \
-utils/reverse_rotate.c \
-utils/rules_msg.c \
+SRC = utils/ft_atoi.c \
 utils/ft_atol.c \
-utils/push.c \
-utils/rotate.c \
-utils/swap.c \
-utils/ft_atoi.c \
 utils/ft_isdigit.c \
+utils/ft_split.c \
+utils/ft_substr.c \
+utils/ft_strdup.c \
+utils/ft_strlen.c \
+push_swap_utils/error_check.c \
+push_swap_utils/push.c \
+push_swap_utils/reverse_rotate.c \
+push_swap_utils/rotate.c  \
+push_swap_utils/rules_msg.c  \
+push_swap_utils/stack_size.c \
+push_swap_utils/swap.c \
 push_swap.c \
 stack_utils.c \
 small_stack_sort.c

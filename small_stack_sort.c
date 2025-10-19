@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_stack_sort.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/19 12:28:08 by ituren            #+#    #+#             */
+/*   Updated: 2025/10/19 13:14:30 by ituren           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	get_max(t_stack *a)
@@ -51,18 +63,6 @@ void	sort_three(t_stack **a)
 		swap_stack(a, "sa\n");
 }
 
-void	sort_four(t_stack **a, t_stack **b)
-{
-	int	min;
-
-	min = get_min(*a);
-	while ((*a)->index != min)
-		rotate_stack(a, "ra\n");
-	pb(a, b);
-	sort_three(a);
-	pa(a, b);
-}
-
 void	sort_five(t_stack **a, t_stack **b)
 {
 	int	min1;
@@ -83,6 +83,9 @@ void	sort_five(t_stack **a, t_stack **b)
 
 void	small_stack_sort(t_stack **a, t_stack **b, int size)
 {
+	int	min;
+
+	min = 0;
 	if (size == 2)
 		swap_stack(a, "sa\n");
 	else if (size == 3)
@@ -90,5 +93,12 @@ void	small_stack_sort(t_stack **a, t_stack **b, int size)
 	else if (size == 5)
 		sort_five(a, b);
 	else if (size == 4)
-		sort_four(a, b);
+	{
+		min = get_min(*a);
+		while ((*a)->index != min)
+			rotate_stack(a, "ra\n");
+		pb(a, b);
+		sort_three(a);
+		pa(a, b);
+	}
 }
