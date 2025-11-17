@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_stack_sort.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 12:28:08 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 19:11:23 by ituren           ###   ########.fr       */
+/*   Updated: 2025/11/17 19:52:03 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	sort_three(t_stack **a)
 		swap_stack(a, "sa\n");
 }
 
-static	void sort_five(t_stack **a, t_stack **b)
+static void	sort_five(t_stack **a, t_stack **b)
 {
 	int	min1;
 	int	min2;

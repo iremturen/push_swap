@@ -18,6 +18,7 @@ push_swap_utils/rotate.c  \
 push_swap_utils/rules_msg.c  \
 push_swap_utils/stack_size.c \
 push_swap_utils/swap.c \
+push_swap_utils/validation.c \
 push_swap.c \
 stack_utils.c \
 small_stack_sort.c

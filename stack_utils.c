@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:04 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 19:01:36 by ituren           ###   ########.fr       */
+/*   Updated: 2025/11/17 19:52:05 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	free_stack(t_stack **stack)
 		*stack = tmp;
 	}
 }
-
 
 static t_stack	*create_node(int value)
 {
@@ -55,7 +54,6 @@ void	add_stack(t_stack **a, int num)
 		last->next = new;
 	}
 }
-
 
 int	is_sorted(t_stack *a)
 {

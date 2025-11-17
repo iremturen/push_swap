@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:01 by ituren            #+#    #+#             */
-/*   Updated: 2025/10/19 19:10:52 by ituren           ###   ########.fr       */
+/*   Updated: 2025/11/17 19:52:03 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_stack;
 
+int		is_valid(char *str, t_stack **a);
 int		error_check(t_stack **a, int argc, char **argv);
 void	push_stack(t_stack **stack_from, t_stack **stack_to, char *msg);
 void	pa(t_stack **a, t_stack **b);
