@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:47 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/17 19:53:44 by ituren           ###   ########.fr       */
+/*   Updated: 2025/11/18 15:25:40 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	error_check(t_stack **a, int argc, char **argv)
 				free_stack(a);
 				return (1);
 			}
-			add_stack(a, ft_atoi(split[j]));
+			add_stack(a, ft_atol(split[j]));
 		}
 		free_split(split);
 	}
