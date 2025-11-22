@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:01 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/17 19:52:03 by ituren           ###   ########.fr       */
+/*   Updated: 2025/11/22 20:39:57 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,7 @@ void	indexing(t_stack **a);
 t_stack	*find_min(t_stack *a);
 void	default_index(t_stack **stack);
 char	*ft_strtrim(char const *s1, char const *set);
+int		get_max(t_stack *a);
+int		get_min(t_stack *a);
+
 #endif

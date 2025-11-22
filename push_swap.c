@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:59 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/17 19:52:02 by ituren           ###   ########.fr       */
+/*   Updated: 2025/11/22 20:29:25 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	radix_sort(t_stack **a, t_stack **b)
 		j = 0;
 		while (j < size)
 		{
+			if (*a == NULL)
+				break;
 			if ((((*a)->index >> i) & 1) == 0)
 				pb(a, b);
 			else

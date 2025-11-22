@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   small_stack_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:36:36 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/22 19:05:20 by iremturen        ###   ########.fr       */
+/*   Created: 2025/11/22 20:16:25 by iremturen         #+#    #+#             */
+/*   Updated: 2025/11/22 20:16:26 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_stack(t_stack **s, char *msg)
+int	get_max(t_stack *a)
 {
+	int		max;
 	t_stack	*temp;
-	t_stack	*last;
-	t_stack	*prev;
 
-	if (!s || !(*s) || !((*s)->next))
-		return ;
-	prev = NULL;
-	last = *s;
-	while (last->next)
+	if (!a)
+		return (-1);
+	max = a->index;
+	temp = a->next;
+	while (temp)
 	{
-		prev = last;
-		last = last->next;
+		if (temp->index > max)
+			max = temp->index;
+		temp = temp->next;
 	}
-	if (prev)
-		prev->next = NULL;
-	temp = last;
-	temp->next = *s;
-	*s = temp;
-	write_message(msg);
+	return (max);
 }
 
-void	reverse_rotate_ab(t_stack **a, t_stack **b)
+int	get_min(t_stack *a)
 {
-	reverse_rotate_stack(a, NULL);
-	reverse_rotate_stack(b, NULL);
-	write_message("rrr\n");
+	int		min;
+	t_stack	*temp;
+
+	if (!a)
+		return (-1);
+	min = a->index;
+	temp = a->next;
+	while (temp)
+	{
+		if (temp->index < min)
+			min = temp->index;
+		temp = temp->next;
+	}
+	return (min);
 }

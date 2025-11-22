@@ -21,6 +21,7 @@ push_swap_utils/swap.c \
 push_swap_utils/validation.c \
 push_swap.c \
 stack_utils.c \
+small_stack_utils.c \
 small_stack_sort.c
 
 OBJ = $(SRC:.c=.o)
