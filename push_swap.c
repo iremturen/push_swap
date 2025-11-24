@@ -6,7 +6,7 @@
 /*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:59 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/22 20:29:25 by iremturen        ###   ########.fr       */
+/*   Updated: 2025/11/24 19:29:15 by iremturen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,8 @@ void	radix_sort(t_stack **a, t_stack **b)
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j < size)
+		while (j < size && *a)
 		{
-			if (*a == NULL)
-				break;
 			if ((((*a)->index >> i) & 1) == 0)
 				pb(a, b);
 			else
