@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:37:01 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/22 20:39:57 by iremturen        ###   ########.fr       */
+/*   Updated: 2025/11/25 16:17:35 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,6 @@ void	free_stack(t_stack **stack);
 void	add_stack(t_stack **a, int num);
 int		is_sorted(t_stack *a);
 int		get_max_bit(t_stack *stack);
-void	radix_sort(t_stack **a, t_stack **b);
-void	indexing(t_stack **a);
-t_stack	*find_min(t_stack *a);
-void	default_index(t_stack **stack);
 char	*ft_strtrim(char const *s1, char const *set);
 int		get_max(t_stack *a);
 int		get_min(t_stack *a);

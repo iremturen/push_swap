@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_stack_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/22 20:16:25 by iremturen         #+#    #+#             */
-/*   Updated: 2025/11/24 19:29:47 by iremturen        ###   ########.fr       */
+/*   Created: 2025/11/25 16:20:40 by ituren            #+#    #+#             */
+/*   Updated: 2025/11/25 16:20:48 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

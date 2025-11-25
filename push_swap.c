@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iremturen <iremturen@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ituren <ituren@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:36:59 by ituren            #+#    #+#             */
-/*   Updated: 2025/11/24 19:29:15 by iremturen        ###   ########.fr       */
+/*   Updated: 2025/11/25 16:20:18 by ituren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	default_index(t_stack **stack)
+static void	default_index(t_stack **stack)
 {
 	t_stack	*temp;
 
@@ -24,7 +24,7 @@ void	default_index(t_stack **stack)
 	}
 }
 
-t_stack	*find_min(t_stack *a)
+static t_stack	*find_min(t_stack *a)
 {
 	t_stack	*temp;
 	t_stack	*min_node;
@@ -45,7 +45,7 @@ t_stack	*find_min(t_stack *a)
 	return (min_node);
 }
 
-void	indexing(t_stack **a)
+static void	indexing(t_stack **a)
 {
 	t_stack	*min_node;
 	int		index;
@@ -60,7 +60,7 @@ void	indexing(t_stack **a)
 	}
 }
 
-void	radix_sort(t_stack **a, t_stack **b)
+static void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	i;
 	int	j;
